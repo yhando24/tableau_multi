@@ -124,15 +124,74 @@ public class TableauMulti {
 	
 		int [][] damier = Methodes.init();
 
+		boolean mouvementOk = true;
+		
 			System.out.println("Bienvenue dans le jeu de dames. Ou voulez vous posez votre pion? Veuillez choisir votre ligne ");
 			int positionLignePion = sc.nextInt();
 			System.out.println("Bien... et votre colonne maintenant");
 			int positionColonnePion = sc.nextInt();
-		
-			Methodes.placerPiont(damier, positionLignePion,positionColonnePion );
+	
+			Methodes.placerPiont(damier, (positionLignePion-1),(positionColonnePion-1) );
+			Methodes.affichetableaux(damier);
+			while(mouvementOk = true) {
+				
+			
+			System.out.println("Bien... Allons voyager. Quel est votre destination : ");
+					System.out.println("- 0 pour aller en haut a gauche");
+					System.out.println("- 1 pour aller en haut a droite");
+					System.out.println("- 2 pour aller en bas a gauche");
+					System.out.println("- 3 pour aller en bas a droite");
+					System.out.println("- 4 pour quitter le jeu");
+
+			int mouvement = sc.nextInt();
+			switch (mouvement) {
+			
+					case 0 : 
+						
+				
+						positionLignePion = ((positionLignePion +9) % 10);
+						positionColonnePion = ((positionColonnePion +11) % 10);
+						System.out.println("position ligne : " + positionLignePion );
+						System.out.println("position colonne : " + positionColonnePion );
+						Methodes.placerPiont(damier, (positionLignePion-1) ,positionColonnePion-1);
+					
+						break;
+						
+					case 1 : 
+					
+						positionLignePion = ((positionLignePion +9) % 10);
+						positionColonnePion = ((positionColonnePion +9) % 10);
+						Methodes.placerPiont(damier, (positionLignePion) ,positionColonnePion);
+						System.out.println("position ligne : " + positionLignePion );
+						System.out.println("position colonne : " + positionColonnePion );
+						break;
+					
+					case 2 : 
+						
+			
+						positionLignePion = ((positionLignePion +11) % 10);
+						positionColonnePion = ((positionColonnePion +11) % 10);
+						Methodes.placerPiont(damier, (positionLignePion) ,positionColonnePion);
+						System.out.println("position ligne : " + positionLignePion );
+						System.out.println("position colonne : " + positionColonnePion );
+						break;
+						
+					case 3 : 
+			
+						positionLignePion = ((positionLignePion +11) % 10);
+						positionColonnePion = ((positionColonnePion +9) % 10);
+						Methodes.placerPiont(damier, (positionLignePion) ,positionColonnePion);
+						
+						System.out.println("position ligne : " + positionLignePion );
+						System.out.println("position colonne : " + positionColonnePion );
+						break;
+					case 4 : 	mouvementOk = false;
+					break;
+					
+					default :System.out.println("Mauvais choix, veuillez recommencer");
+				}
 			Methodes.affichetableaux(damier);
 
-	
-			
+			}
 	}
 }

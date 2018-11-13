@@ -50,9 +50,10 @@ public class Methodes {
 		return damier;
 	}
 	
+//	METHODE QUI DEPLACE LE PIONT
 	public static int[][] placerPiont(int damier [][], int ligne, int colonne) {
 		remplirtableaux(damier);
-	  damier[ligne-1][colonne-1] = 1;
+	  damier[ligne][colonne] = 1;
 	  return damier;
 		
 		
