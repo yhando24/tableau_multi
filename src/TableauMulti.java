@@ -132,6 +132,8 @@ public class TableauMulti {
 			int positionColonnePion = sc.nextInt();
 	
 			Methodes.placerPiont(damier, (positionLignePion-1),(positionColonnePion-1) );
+			positionLignePion -= 1;
+			positionColonnePion -= 1;
 			Methodes.affichetableaux(damier);
 			while(mouvementOk = true) {
 				
@@ -148,19 +150,21 @@ public class TableauMulti {
 			
 					case 0 : 
 						
+						// deplacement en haut a gauche
 				
 						positionLignePion = ((positionLignePion +9) % 10);
-						positionColonnePion = ((positionColonnePion +11) % 10);
+						positionColonnePion = ((positionColonnePion +9) % 10);
 						System.out.println("position ligne : " + positionLignePion );
 						System.out.println("position colonne : " + positionColonnePion );
-						Methodes.placerPiont(damier, (positionLignePion-1) ,positionColonnePion-1);
+						Methodes.placerPiont(damier, (positionLignePion) ,positionColonnePion);
 					
 						break;
 						
 					case 1 : 
 					
+						// deplacement en haut a droite
 						positionLignePion = ((positionLignePion +9) % 10);
-						positionColonnePion = ((positionColonnePion +9) % 10);
+						positionColonnePion = ((positionColonnePion +11) % 10);
 						Methodes.placerPiont(damier, (positionLignePion) ,positionColonnePion);
 						System.out.println("position ligne : " + positionLignePion );
 						System.out.println("position colonne : " + positionColonnePion );
@@ -168,18 +172,20 @@ public class TableauMulti {
 					
 					case 2 : 
 						
-			
+						// deplacement en bas a droite
+						
 						positionLignePion = ((positionLignePion +11) % 10);
-						positionColonnePion = ((positionColonnePion +11) % 10);
+						positionColonnePion = ((positionColonnePion +9) % 10);
 						Methodes.placerPiont(damier, (positionLignePion) ,positionColonnePion);
 						System.out.println("position ligne : " + positionLignePion );
 						System.out.println("position colonne : " + positionColonnePion );
 						break;
 						
+						// deplacement en bas a gauche
 					case 3 : 
 			
 						positionLignePion = ((positionLignePion +11) % 10);
-						positionColonnePion = ((positionColonnePion +9) % 10);
+						positionColonnePion = ((positionColonnePion +11) % 10);
 						Methodes.placerPiont(damier, (positionLignePion) ,positionColonnePion);
 						
 						System.out.println("position ligne : " + positionLignePion );
