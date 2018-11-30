@@ -18,5 +18,6 @@ public class Exercice_1 {
 	
 	Methodes.remplirtableaux(tableaumulti);
 
+	
 	}
 }
